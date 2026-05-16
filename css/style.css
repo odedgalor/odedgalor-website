@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cormorant:wght@300;400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  min-height: 100vh;
+  font-size: 18px;
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ─── Navigation ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: #000;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0;
+}
+
+.nav-item { position: relative; }
+
+.nav-link {
+  display: block;
+  padding: 0.85rem 1.1rem;
+  font-size: 1.14rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #fff;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.nav-link:hover { opacity: 0.65; text-decoration: none; }
+
+/* Dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  min-width: 240px;
+  z-index: 200;
+}
+
+.nav-item:hover .dropdown { display: block; }
+
+.dropdown a {
+  display: block;
+  padding: 0.65rem 1.3rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #1a1a1a;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.dropdown a:last-child { border-bottom: none; }
+.dropdown a:hover { background: #1a1a1a; text-decoration: none; }
+
+/* ─── Home Page ─── */
+.home {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.home-name {
+  font-size: clamp(1.68rem, 3vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 1.4rem 1rem 1.1rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Photo with dark-background blend */
+.home-photo-wrap {
+  position: relative;
+  display: inline-block;
+  max-width: 242px;
+  width: 90%;
+}
+
+.home-photo {
+  width: 100%;
+  display: block;
+  mix-blend-mode: lighten;
+}
+
+.home-photo-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 45%, #000 80%);
+  pointer-events: none;
+}
+
+/* Italic credential lines (like original site) */
+.home-credits {
+  margin: 1.8rem auto 1.2rem;
+  font-style: italic;
+  font-size: 1.14rem;
+  font-weight: 300;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.home-credits a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Bio paragraphs */
+.home-bio-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 1rem 3rem 1.5rem;
+  text-align: justify;
+}
+
+.home-bio-section p {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  font-weight: 300;
+  color: #e0e0e0;
+  margin-bottom: 0.9rem;
+}
+
+.home-bio-section p:last-child { margin-bottom: 0; }
+
+.home-press {
+  max-width: 860px;
+  margin: 1.2rem auto 0;
+  padding: 1rem 3rem 1.5rem;
+  border-top: 1px solid #222;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 3rem;
+}
+
+.home-press blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #bbb;
+  line-height: 1.45;
+}
+
+.home-press cite {
+  font-style: normal;
+  color: #777;
+}
+
+.home-press-badge {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0.6rem;
+}
+
+/* ─── Inner Pages ─── */
+.page {
+  padding-top: 110px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.page-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+/* ─── Papers ─── */
+.paper-list { list-style: none; }
+
+.paper-item {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #151515;
+}
+.paper-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+.paper-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0.35rem;
+}
+.paper-title a:hover { text-decoration: underline; }
+
+.paper-meta {
+  font-size: 0.92rem;
+  color: #bbb;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.paper-note {
+  font-size: 0.88rem;
+  color: #999;
+  margin-top: 0.3rem;
+}
+
+/* ─── Books ─── */
+.book-list { display: flex; flex-direction: column; gap: 4rem; }
+
+.book-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+  .book-item { grid-template-columns: 1fr; }
+}
+
+.book-cover {
+  width: 200px;
+  display: block;
+  box-shadow: 0 4px 24px rgba(255,255,255,0.1);
+}
+
+.book-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
+.book-subtitle {
+  font-size: 0.95rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.book-desc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #ddd;
+  font-weight: 300;
+  margin-bottom: 1.3rem;
+}
+
+.book-links { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+.book-link {
+  font-size: 0.62rem;
+  padding: 0.25rem 0.63rem;
+  border: 1px solid #444;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+}
+.book-link:hover { background: #fff; color: #000; text-decoration: none; border-color: #fff; }
+
+/* ─── Lectures Table ─── */
+.lecture-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.97rem;
+}
+
+.lecture-table th {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid #333;
+  font-weight: 400;
+  color: #aaa;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lecture-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #111;
+  vertical-align: top;
+  line-height: 1.5;
+}
+.lecture-table tr:last-child td { border-bottom: none; }
+.lecture-table tr:hover td { background: #0a0a0a; }
+
+.lecture-table td a { border-bottom: 1px solid #444; }
+.lecture-table td a:hover { border-color: #fff; text-decoration: none; }
+
+/* ─── Videos ─── */
+.video-page-title {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.yt-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.yt-container img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.yt-container:hover img { opacity: 0.85; }
+
+.yt-play {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  border: 2px solid rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  padding-left: 5px;
+  pointer-events: none;
+  transition: background 0.2s;
+}
+
+.yt-container:hover .yt-play {
+  background: rgba(180,0,0,0.85);
+  border-color: transparent;
+}
+
+/* Active player state */
+.yt-container.yt-playing {
+  aspect-ratio: 16 / 9;
+  cursor: default;
+}
+
+.yt-container.yt-playing iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.photo-gallery img { width: 100%; display: block; }
+
+/* ─── Journey of Humanity single-page layout ─── */
+.journey-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.journey-right .book-desc {
+  font-size: 0.97rem;
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  color: #ddd;
+}
+
+.all-quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.all-quotes blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 0.93rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.all-quotes cite {
+  font-style: normal;
+  color: #888;
+}
+
+.press-awards {
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.press-awards-line {
+  text-align: center;
+  font-size: 0.88rem;
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* ─── Book Press Section ─── */
+.press-section {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid #2a2a2a;
+}
+
+.press-tagline {
+  text-align: center;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #ddd;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.02em;
+}
+
+.press-quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.press-quotes blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.press-quotes cite {
+  font-style: normal;
+  color: #999;
+}
+
+.press-badge {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #aaa;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 0.7rem 0;
+  margin: 2rem 0;
+}
+
+.press-awards {
+  text-align: center;
+  font-size: 0.97rem;
+  color: #bbb;
+  line-height: 2;
+  margin-bottom: 2rem;
+}
+
+.press-endorsements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem 3rem;
+  margin-bottom: 3rem;
+}
+
+.press-endorsements blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.press-endorsements cite {
+  font-style: normal;
+  color: #999;
+}
+
+.press-collage {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+  filter: invert(1);
+  margin-top: 1rem;
+}
+
+/* ─── CV ─── */
+.cv-download {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 1px solid #fff;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  transition: all 0.15s;
+}
+.cv-download:hover { background: #fff; color: #000; text-decoration: none; }
+
+/* ─── CV ─── */
+.cv-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cv-section p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.75;
+}
+
+.cv-heading {
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 0.4rem !important;
+}
+
+/* ─── AEA Lectures ─── */
+.aea-item {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #151515;
+}
+.aea-item:last-child { border-bottom: none; }
+.aea-title { font-size: 1.05rem; font-weight: 400; margin-bottom: 0.3rem; }
+.aea-meta { font-size: 0.9rem; color: #aaa; }
+
+/* ─── Slides ─── */
+.slides-group { margin-bottom: 3rem; }
+.slides-group-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #aaa;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 0.5rem;
+}
+.slide-item {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #0f0f0f;
+  font-size: 1rem;
+}
+.slide-item:last-child { border-bottom: none; }
+
+/* ─── Footer ─── */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #444;
+  font-size: 0.82rem;
+  border-top: 1px solid #111;
+  letter-spacing: 0.05em;
+}
+
+footer a { color: #666; }
+footer a:hover { color: #aaa; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .nav-inner { gap: 0; flex-wrap: wrap; justify-content: center; }
+  .nav-link { padding: 0.6rem 0.7rem; font-size: 0.85rem; }
+  .page { padding-left: 1.2rem; padding-right: 1.2rem; }
+  .lecture-table { font-size: 0.85rem; }
+  .lecture-table th, .lecture-table td { padding: 0.6rem 0.5rem; }
+}
