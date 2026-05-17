@@ -8,6 +8,7 @@ body {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   min-height: 100vh;
   font-size: 18px;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -91,7 +92,7 @@ nav {
 .home-photo-wrap {
   position: relative;
   display: inline-block;
-  max-width: 242px;
+  max-width: 374px;
   width: 90%;
 }
 
@@ -111,7 +112,7 @@ nav {
 
 /* Italic credential lines (like original site) */
 .home-credits {
-  margin: 1.8rem auto 1.2rem;
+  margin: 0.4rem auto 1.2rem;
   font-style: italic;
   font-size: 1.14rem;
   font-weight: 300;
@@ -236,8 +237,9 @@ nav {
   align-items: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .book-item { grid-template-columns: 1fr; }
+  .book-cover { width: 140px; }
 }
 
 .book-cover {
@@ -598,4 +600,11 @@ footer a:hover { color: #aaa; }
   .page { padding-left: 1.2rem; padding-right: 1.2rem; }
   .lecture-table { font-size: 0.85rem; }
   .lecture-table th, .lecture-table td { padding: 0.6rem 0.5rem; }
+
+  .all-quotes { grid-template-columns: 1fr; gap: 0.8rem; }
+  .press-quotes { grid-template-columns: 1fr; }
+  .press-endorsements { grid-template-columns: 1fr; }
+  .home-bio-section { padding: 0 1.2rem 2rem; }
+  .home-press { padding: 1rem 1.2rem; grid-template-columns: 1fr; }
+  .journey-layout { grid-template-columns: 1fr; }
 }
