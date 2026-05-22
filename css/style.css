@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background: #4F5D6B;
+  background: #3F4A54;
   color: #F4F1EA;
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   min-height: 100vh;
@@ -25,7 +25,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: #4F5D6B;
+  background: #3F4A54;
   border-bottom: 1px solid #5e6d7a;
 }
 
@@ -60,7 +60,7 @@ nav {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #3d4b58;
+  background: #2d3847;
   border: 1px solid #5e6d7a;
   min-width: 240px;
   z-index: 200;
@@ -72,12 +72,12 @@ nav {
   display: block;
   padding: 0.65rem 1.3rem;
   font-size: 0.9rem;
-  border-bottom: 1px solid #435260;
+  border-bottom: 1px solid #333f4f;
   white-space: nowrap;
   letter-spacing: 0.02em;
 }
 .dropdown a:last-child { border-bottom: none; }
-.dropdown a:hover { background: #435260; text-decoration: none; }
+.dropdown a:hover { background: #333f4f; text-decoration: none; }
 
 /* ─── Home Page ─── */
 .home {
@@ -109,11 +109,7 @@ nav {
 }
 
 .home-photo-wrap::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 45%, #4F5D6B 80%);
-  pointer-events: none;
+  content: none;
 }
 
 /* Italic credential lines (like original site) */
@@ -208,7 +204,7 @@ nav {
 .paper-item {
   margin-bottom: 1.2rem;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid #435260;
+  border-bottom: 1px solid #333f4f;
 }
 .paper-item:last-child { border-bottom: none; margin-bottom: 0; }
 
@@ -286,7 +282,7 @@ nav {
   text-transform: uppercase;
   transition: all 0.15s;
 }
-.book-link:hover { background: #F4F1EA; color: #4F5D6B; text-decoration: none; border-color: #F4F1EA; }
+.book-link:hover { background: #F4F1EA; color: #3F4A54; text-decoration: none; border-color: #F4F1EA; }
 
 /* ─── Lectures Table ─── */
 .lecture-table {
@@ -308,12 +304,12 @@ nav {
 
 .lecture-table td {
   padding: 0.8rem 1rem;
-  border-bottom: 1px solid #435260;
+  border-bottom: 1px solid #333f4f;
   vertical-align: top;
   line-height: 1.5;
 }
 .lecture-table tr:last-child td { border-bottom: none; }
-.lecture-table tr:hover td { background: #3c4a57; }
+.lecture-table tr:hover td { background: #2c3846; }
 
 .lecture-table td a { border-bottom: 1px solid #8a9aaa; }
 .lecture-table td a:hover { border-color: #F4F1EA; text-decoration: none; }
@@ -533,7 +529,7 @@ nav {
   margin-bottom: 3rem;
   transition: all 0.15s;
 }
-.cv-download:hover { background: #F4F1EA; color: #4F5D6B; text-decoration: none; }
+.cv-download:hover { background: #F4F1EA; color: #3F4A54; text-decoration: none; }
 
 /* ─── CV ─── */
 .cv-body {
@@ -560,7 +556,7 @@ nav {
 .aea-item {
   margin-bottom: 1.8rem;
   padding-bottom: 1.8rem;
-  border-bottom: 1px solid #435260;
+  border-bottom: 1px solid #333f4f;
 }
 .aea-item:last-child { border-bottom: none; }
 .aea-title { font-size: 1.05rem; font-weight: 400; margin-bottom: 0.3rem; }
@@ -576,7 +572,7 @@ nav {
   margin-bottom: 1rem;
   color: #C0BAB0;
   font-size: 0.85rem;
-  border-bottom: 1px solid #435260;
+  border-bottom: 1px solid #333f4f;
   padding-bottom: 0.5rem;
 }
 .slide-item {
@@ -592,7 +588,7 @@ footer {
   padding: 2.5rem 1rem;
   color: #8A9AA8;
   font-size: 0.82rem;
-  border-top: 1px solid #435260;
+  border-top: 1px solid #333f4f;
   letter-spacing: 0.05em;
 }
 
