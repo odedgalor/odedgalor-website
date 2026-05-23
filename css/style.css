@@ -603,6 +603,8 @@ footer a:hover { color: #C0BAB0; }
 @media (max-width: 768px) {
   .nav-inner { gap: 0; flex-wrap: wrap; justify-content: center; max-width: 100%; }
   .nav-link { padding: 0.6rem 0.5rem; font-size: 0.78rem; }
+  .nav-item { position: static; }
+  .dropdown { left: 0; right: 0; transform: none; min-width: 100%; }
   .page { padding-left: 1.2rem; padding-right: 1.2rem; }
   .lecture-table { font-size: 0.85rem; }
   .lecture-table th, .lecture-table td { padding: 0.6rem 0.5rem; }
