@@ -220,6 +220,14 @@ nav {
 }
 .paper-title a:hover { text-decoration: underline; }
 
+.paper-favicon {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
+  vertical-align: -3px;
+  border-radius: 3px;
+}
+
 .paper-meta {
   font-size: 0.92rem;
   color: #D8D2C8;
