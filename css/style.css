@@ -233,6 +233,18 @@ nav {
   margin-top: 0.3rem;
 }
 
+.country-heading {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C0BAB0;
+  border-bottom: 1px solid #647585;
+  padding-bottom: 0.5rem;
+  margin: 2.2rem 0 1rem;
+}
+.country-heading:first-of-type { margin-top: 0; }
+
 /* ─── Books ─── */
 .book-list { display: flex; flex-direction: column; gap: 4rem; }
 
