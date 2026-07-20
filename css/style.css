@@ -393,6 +393,7 @@ nav {
 .lecture-table td a:hover { border-color: #F4F1EA; text-decoration: none; }
 
 /* ─── Videos ─── */
+.video-page-title .preserve-case { text-transform: none; }
 .video-page-title {
   font-size: clamp(1.4rem, 3vw, 2.2rem);
   font-weight: 300;
