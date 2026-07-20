@@ -295,6 +295,7 @@ nav {
 }
 
 .press-thumb-top { object-position: top; cursor: zoom-in; }
+.press-thumb-left { object-position: left; }
 
 .lightbox-overlay {
   position: fixed;
